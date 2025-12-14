@@ -1,5 +1,7 @@
 "use client"
 
+import React from "react";
+
 interface ContentRendererProps {
   content: string;
 }
@@ -7,7 +9,7 @@ interface ContentRendererProps {
 export function ContentRenderer({ content }: ContentRendererProps) {
   const renderContent = () => {
     const lines = content.split('\n');
-    const elements: JSX.Element[] = [];
+    const elements: React.ReactElement[] = [];
     let currentList: string[] = [];
     let listType: 'ul' | 'ol' | null = null;
 
@@ -32,7 +34,7 @@ export function ContentRenderer({ content }: ContentRendererProps) {
     };
 
     const processInlineFormatting = (text: string) => {
-      const parts: (string | JSX.Element)[] = [];
+      const parts: (string | React.ReactElement)[] = [];
       let remaining = text;
       let key = 0;
 
