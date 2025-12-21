@@ -1,10 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { blogs } from "@/features/blog";
 import { getBlogCategories } from "@/features/blog/utils";
 import { Clock, Calendar } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
 export default function BlogPage() {
   const categories = getBlogCategories(blogs);
@@ -50,8 +50,7 @@ export default function BlogPage() {
             <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-500 ease-out mb-12 border-border bg-card">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                 <div className="relative h-56 md:h-auto overflow-hidden bg-muted">
-                  <Image
-                    fill
+                  <img
                     src={blogs[0].coverImage}
                     alt={blogs[0].title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
@@ -74,8 +73,7 @@ export default function BlogPage() {
                   </p>
                   <div className="flex flex-wrap items-center gap-3 md:gap-6 text-xs md:text-sm text-muted-foreground">
                     <div className="flex items-center gap-2">
-                      <Image
-                        fill
+                      <img
                         src={blogs[0].authorImage}
                         alt={blogs[0].author}
                         className="w-8 h-8 rounded-full"
@@ -109,8 +107,7 @@ export default function BlogPage() {
               <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-500 ease-out h-full border-border bg-card">
                 {/* Cover Image */}
                 <div className="relative h-48 overflow-hidden bg-muted">
-                  <Image
-                    fill
+                  <img
                     src={blog.coverImage}
                     alt={blog.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
@@ -133,8 +130,7 @@ export default function BlogPage() {
                   {/* Meta Info */}
                   <div className="border-t border-border pt-4 space-y-3">
                     <div className="flex items-center gap-2">
-                      <Image
-                        fill
+                      <img
                         src={blog.authorImage}
                         alt={blog.author}
                         className="w-8 h-8 rounded-full"

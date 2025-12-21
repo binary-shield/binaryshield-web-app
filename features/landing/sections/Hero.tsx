@@ -56,7 +56,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto font-normal leading-relaxed"
           >
-            Solusi IT profesional untuk keamanan siber, DevOps, dan cloud infrastructure.
+            Solusi IT profesional untuk keamanan siber, DevOps, dan cloud
+            infrastructure.
           </motion.p>
         </div>
 
@@ -81,7 +82,8 @@ export function Hero() {
               <CardContent className="flex-1">
                 <CardDescription className="text-muted-foreground leading-relaxed text-base">
                   Layanan keamanan komprehensif untuk melindungi data berharga,
-                  infrastruktur, dan reputasi Anda dari ancaman siber yang terus berkembang.
+                  infrastruktur, dan reputasi Anda dari ancaman siber yang terus
+                  berkembang.
                 </CardDescription>
               </CardContent>
               <CardFooter className="pt-2">
@@ -131,7 +133,8 @@ export function Hero() {
               <CardContent className="flex-1">
                 <CardDescription className="text-muted-foreground leading-relaxed text-base">
                   Manfaatkan kekuatan penuh cloud untuk membangun, menerapkan,
-                  dan mengelola aplikasi yang scalable, tangguh, dan hemat biaya.
+                  dan mengelola aplikasi yang scalable, tangguh, dan hemat
+                  biaya.
                 </CardDescription>
               </CardContent>
               <CardFooter className="pt-2">
