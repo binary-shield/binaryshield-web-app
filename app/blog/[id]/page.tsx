@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogs } from "@/features/blog";
@@ -10,7 +11,6 @@ import { Clock, Calendar, Share2, Bookmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ContentRenderer } from "@/shared/components";
-import Image from "next/image";
 
 export async function generateStaticParams() {
   return blogs.map((blog) => ({
@@ -37,8 +37,7 @@ export default async function BlogDetailPage({
       {/* Hero Section */}
       <div className="relative h-[300px] md:h-[400px] lg:h-[500px] bg-background overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            fill
+          <img
             src={blog.coverImage}
             alt={blog.title}
             className="w-full h-full object-cover"
@@ -59,8 +58,7 @@ export default async function BlogDetailPage({
 
           <div className="flex flex-wrap items-center gap-3 md:gap-4 lg:gap-6 text-xs md:text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
-              <Image
-                fill
+              <img
                 src={blog.authorImage}
                 alt={blog.author}
                 className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-border"
@@ -130,8 +128,7 @@ export default async function BlogDetailPage({
         {/* Author Bio */}
         <Card className="p-4 md:p-6 mb-8 md:mb-12 border-border bg-card">
           <div className="flex flex-col sm:flex-row items-start gap-4">
-            <Image
-              fill
+            <img
               src={blog.authorImage}
               alt={blog.author}
               className="w-12 h-12 md:w-16 md:h-16 rounded-full"
@@ -168,8 +165,7 @@ export default async function BlogDetailPage({
                 <Link key={related.id} href={`/blog/${related.id}`}>
                   <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 h-full border-border bg-card">
                     <div className="relative h-40 overflow-hidden bg-muted">
-                      <Image
-                        fill
+                      <img
                         src={related.coverImage}
                         alt={related.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
