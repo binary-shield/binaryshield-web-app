@@ -47,7 +47,7 @@ export interface Stat {
 }
 
 export interface CoreValue {
-  icon: any; // LucideIcon type
+  icon: React.ComponentType<{ className?: string }>; // LucideIcon or similar icon component type
   title: string;
   description: string;
 }

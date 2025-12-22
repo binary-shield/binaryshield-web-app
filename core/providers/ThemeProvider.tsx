@@ -13,18 +13,19 @@ export function ThemeProvider({
   const [nextTheme, setNextTheme] = React.useState<string>("");
 
   React.useEffect(() => {
-    const handleThemeChange = (e: CustomEvent) => {
-      if (e.detail?.origin && e.detail?.theme) {
-        setAnimationOrigin(e.detail.origin);
-        setNextTheme(e.detail.theme);
+    const handleThemeChange = (e: Event) => {
+      const customEvent = e as CustomEvent<{ origin?: { x: number; y: number }; theme?: string }>;
+      if (customEvent.detail?.origin && customEvent.detail?.theme) {
+        setAnimationOrigin(customEvent.detail.origin);
+        setNextTheme(customEvent.detail.theme);
         setIsAnimating(true);
         setTimeout(() => setIsAnimating(false), 1000);
       }
     };
 
-    window.addEventListener("theme-change" as any, handleThemeChange);
+    window.addEventListener("theme-change", handleThemeChange);
     return () =>
-      window.removeEventListener("theme-change" as any, handleThemeChange);
+      window.removeEventListener("theme-change", handleThemeChange);
   }, []);
 
   const maxRadius = React.useMemo(() => {
