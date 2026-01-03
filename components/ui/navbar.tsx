@@ -45,6 +45,15 @@ export function Navbar() {
                         Ebook
                     </Link>
                     <Link 
+                        href="/e-course" 
+                        className={cn(
+                            "px-4 py-2 rounded-lg hover:bg-accent hover:text-foreground transition-all duration-300 relative text-sm font-medium",
+                            isActive("/e-course") ? "text-primary bg-accent/50" : "text-muted-foreground"
+                        )}
+                    >
+                        E-Course
+                    </Link>
+                    <Link 
                         href="/blog" 
                         className={cn(
                             "px-4 py-2 rounded-lg hover:bg-accent hover:text-foreground transition-all duration-300 relative text-sm font-medium",
@@ -121,6 +130,15 @@ export function Navbar() {
                                         )}
                                     >
                                         Ebook
+                                    </Link>
+                                    <Link 
+                                        href="/e-course" 
+                                        className={cn(
+                                            "text-base font-medium px-4 py-3 rounded-lg hover:bg-accent transition-all duration-300",
+                                            isActive("/e-course") ? "text-primary bg-accent/50" : "text-foreground"
+                                        )}
+                                    >
+                                        E-Course
                                     </Link>
                                     <Link 
                                         href="/blog" 
