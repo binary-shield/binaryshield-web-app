@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
-import { ThemeProvider } from "@/core/providers";
+import { ThemeProvider, SupabaseProvider } from "@/core/providers";
 import "./globals.css";
 
 const inter = Inter({
@@ -39,9 +39,11 @@ export default function RootLayout({
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <SupabaseProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </SupabaseProvider>
         </ThemeProvider>
       </body>
     </html>
